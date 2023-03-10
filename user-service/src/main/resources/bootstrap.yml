@@ -1,13 +1,15 @@
-server:
-  port: 8083
 spring:
   application:
-    name: moto-service
+    name: user-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8080
   h2:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:moto_servicedb
+    url: jdbc:h2:mem:user_servicedb
     username: sa
     password: admin
     driver-class-name: org.h2.Driver
